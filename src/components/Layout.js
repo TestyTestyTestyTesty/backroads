@@ -1,8 +1,7 @@
 import React from "react"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
-
-import { FaBeer } from 'react-icons/fa';
+import "./Layout.css"
 const Layout = (props) => {
   return (
     <>
