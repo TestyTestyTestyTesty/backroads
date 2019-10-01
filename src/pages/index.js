@@ -1,14 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
-import SimpleHero from "../components/SimpleHero"
+import StyledHero from "../components/Home/StyledHero"
 import Banner from "../components/Banner"
 import About from "../components/Home/About"
 import Services from "../components/Home/Services"
-export default () => (
+import { graphql } from "gatsby"
+
+export default ({data}) => (
   <div>
     <Layout>
-      <SimpleHero>
+      <StyledHero img={data.fluid.childImageSharp.fluid} home="true">
         <Banner
           title="cotinue exploring"
           info="Vice jean shorts +1 Portland aesthetic umami pork belly VHS scenester"
@@ -17,9 +19,22 @@ export default () => (
             explore tours
           </Link>
         </Banner>
-      </SimpleHero>
+      </StyledHero>
       <About/>
       <Services/>
     </Layout>
   </div>
 )
+
+
+export const getSiteData = graphql`
+  {
+    fluid: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality:90) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`
