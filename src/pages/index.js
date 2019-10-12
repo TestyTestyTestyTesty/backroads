@@ -5,6 +5,7 @@ import StyledHero from "../components/Home/StyledHero"
 import Banner from "../components/Banner"
 import About from "../components/Home/About"
 import Services from "../components/Home/Services"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { graphql } from "gatsby"
 
 export default ({data}) => (
@@ -15,9 +16,9 @@ export default ({data}) => (
           title="cotinue exploring"
           info="Vice jean shorts +1 Portland aesthetic umami pork belly VHS scenester"
         >
-          <Link to="/tours" className="btn-white">
+          <AniLink paintDrip hex="#3FD0D4" to="/tours" className="btn-white">
             explore tours
-          </Link>
+          </AniLink>
         </Banner>
       </StyledHero>
       <About/>
