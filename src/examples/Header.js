@@ -15,7 +15,6 @@ const getSiteData = graphql`
 const Header = () => {
   const data = useStaticQuery(getSiteData)
   const { title } = data.site.siteMetadata
-  console.log(title)
   return (
     <div>
       <h1>Title: {title}</h1>

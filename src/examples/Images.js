@@ -27,7 +27,6 @@ const getSiteData = graphql`
 
 const Images = () => {
     const data = useStaticQuery(getSiteData)
-    console.log(data)
     return (
         <div>
             <Img fixed={data.fixed.childImageSharp.fixed}/>

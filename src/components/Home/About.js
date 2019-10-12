@@ -17,7 +17,6 @@ const getSiteData = graphql`
 `
 const About = () => {
   const data = useStaticQuery(getSiteData);
-  console.log(data);
   return (
     <section className={styles.about}>
       <StyledTitle title="about" subtitle="us" />
